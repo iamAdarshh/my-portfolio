@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaHamburger } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
 type NavbarItem = {
@@ -26,7 +27,11 @@ type NavbarItemProps = {
 };
 
 function NavbarBrand({ value }: Readonly<{ value: string }>) {
-  return <div className="flex-shrink-0 text-2xl font-semibold">{value}</div>;
+  return (
+    <div className="flex-shrink-0 text-2xl font-semibold text-gray-900">
+      {value}
+    </div>
+  );
 }
 
 function NavbarItem({ value, href, className }: Readonly<NavbarItemProps>) {
@@ -34,7 +39,7 @@ function NavbarItem({ value, href, className }: Readonly<NavbarItemProps>) {
     <a
       href={href}
       className={twMerge(
-        "text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+        "text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium",
         className
       )}
     >
@@ -47,14 +52,14 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 text-white shadow-md">
+    <nav className="bg-white text-gray-800 shadow-md fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-24">
           {/* Mobile menu button */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen ? "true" : "false"}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -75,6 +80,7 @@ const Navbar: React.FC = () => {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
+              <FaHamburger />
             </button>
           </div>
 

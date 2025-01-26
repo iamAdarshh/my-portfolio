@@ -1,11 +1,12 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import ProfileImage from "../assets/profile.jpeg";
+import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
+import Button, { ButtonVariants } from "./Button";
 
 const About: React.FC = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-16">
-      <div className="flex flex-col items-center justify-center sm:flex-row sm:space-x-8">
+    <section className="flex flex-col min-h-screen bg-gray-50 py-16 px-4">
+      <div className="flex gap-5 items-center justify-center">
         {/* Profile Image */}
         <div className="mb-8 sm:mb-0">
           <img
@@ -16,29 +17,40 @@ const About: React.FC = () => {
         </div>
 
         {/* Text and Buttons */}
-        <div className="text-center sm:text-left">
-          <h1 className="text-4xl font-bold text-gray-800">
-            Hello, I'm Adarsh Choudhary
+        <div className="flex flex-col items-start justify-center text-center space-y-6 px-6">
+          <div className="text-xl font-normal text-gray-600">Hey, I'm</div>
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-400 to-pink-500">
+            Adarsh Choudhary
           </h1>
           <p className="text-xl text-gray-600 mt-2">
-            Full-Stack Developer/Student at University of Paderborn
+            Full-Stack Developer / Student at University of Paderborn
           </p>
-          <p className="mt-4 text-lg text-gray-500">
-            I am passionate about creating interactive and user-friendly web
-            applications. I enjoy learning new technologies and improving my
-            development skills.
+          <p className="text-lg text-gray-500 max-w-xl text-start">
+            I'm a software engineer based in India, currently pursuing my
+            Master's in Computer Science in Germany. I enjoy building
+            interactive, user-friendly web applications and exploring new
+            technologies.
           </p>
-          <div className="mt-6 space-x-4">
-            <button className="px-6 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-800">
-              Download CV
-            </button>
-            <button className="px-6 py-2 bg-gray-800 text-white rounded-md text-sm font-medium hover:bg-black">
-              Contact Info
-            </button>
+          {/* <a
+            href="#contact"
+            className="mt-6 px-8 py-3 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105"
+          >
+            Say hi →
+          </a> */}
+
+          <div className="flex gap-3">
+            <Button className="text-sm">Download CV</Button>
+            <Button
+              variant={ButtonVariants.Light}
+              className="flex gap-2 items-center text-gray-800 text-sm"
+            >
+              <span>Say hi</span>
+              <FaArrowRight className="h-3" />
+            </Button>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center space-x-6 mt-4">
+          <div className="flex justify-center gap-3">
             <a
               href="https://www.linkedin.com/in/adarsh-choudhary-686804180/"
               target="_blank"
@@ -58,8 +70,38 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="flex flex-col items-center sm:flex-row sm:space-x-8"></div>
     </section>
   );
 };
 
 export default About;
+// import React from "react";
+
+// const About: React.FC = () => {
+//   return (
+//     <div className="flex flex-col items-start justify-center text-center space-y-6 px-6">
+//       <div className="text-xl font-normal text-gray-600">Hey, I'm</div>
+//       <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-400 to-pink-500">
+//         Darlene Robertson
+//       </h1>
+//       <p className="text-lg max-w-3xl text-gray-700">
+//         I'm a software engineer based in Toronto, Canada and also a
+//         communication and journalism student. I enjoy creating things that live
+//         on the internet, whether that be websites, applications, or anything in
+//         between. I have been freelancing for a year now while studying at the
+//         university and I've managed to gain a decent amount of experience and
+//         valuable knowledge from all different kinds of fields throughout my
+//         projects/work.
+//       </p>
+//       <a
+//         href="#contact"
+//         className="mt-6 px-8 py-3 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105"
+//       >
+//         Say hi →
+//       </a>
+//     </div>
+//   );
+// };
+
+// export default About;

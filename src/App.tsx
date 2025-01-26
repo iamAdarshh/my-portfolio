@@ -1,13 +1,12 @@
 import "./App.css";
 import About from "./components/About";
-import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <About />
-    </>
+    </Layout>
   );
 }
 
